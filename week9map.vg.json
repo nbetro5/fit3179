@@ -1,34 +1,14 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Car Sales by State",
-    "width": 800,
-    "height": 600,
-    "projection": {"type": "azimuthalEqualArea"},
-    "data": {"url": "https://raw.githubusercontent.com/nbetro5/fit3179/main/australian-states.min.geojson", "format": {"type": "json"}},
-
-    "transform": [
-    {
-        "lookup": "properties.STATE_NAME",
-        "from": {
-        "data": {
-        "url": "https://raw.githubusercontent.com/nbetro5/fit3179/main/salesbystate.csv"
-        },
-        "key": "State",
-        "fields": ["Sales"]
-        }
-    }
-],
-    "mark": {"type": "geoshape"},
-    "encoding": {
-    "color": {
-    "field": "Sales",
-    "type": "quantitative",
-    "scale": {"type": "linear"}
-    },
-    "tooltip": [
-    {"field": "properties.STATE_NAME", "type": "nominal", "title":
-    "State"},
-    {"field": "Sales", "type": "quantitative"}
-    ]
-    }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/nbetro5/fit3179/main/australian-states.min.geojson",
+    "format": {"type": "json"}
+  },
+  "projection": {"type": "albers",
+  "rotate": [-132.8906, 0, 0],
+  "center": [0, -27.4422],
+  "parallels": [-39.2069, -15.6778]},
+    "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"}
 }
