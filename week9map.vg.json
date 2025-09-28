@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Car Sales by State",
+    "width": 800,
+    "height": 600,
+    "projection": {"type": "azimuthalEqualArea"},
+    "data": {"url": "https://github.com/nbetro5/fit3179/blob/main/georef-australia-state%40public.geojson"},
+    "transform": [
+    {
+        "lookup": "properties.NAME",
+        "from": {
+        "data": {
+        "url": "https://github.com/nbetro5/fit3179/blob/main/salesbystate.csv"
+        },
+        "key": "State",
+        "fields": ["Sales"]
+        }
+    }
+],
+    "mark": {"type": "geoshape"},
+    "encoding": {
+    "color": {
+    "field": "Active Cases",
+    "type": "quantitative",
+    "scale": {"type": "linear"}
+    },
+    "tooltip": [
+    {"field": "properties.NAME", "type": "nominal", "title":
+    "State"},
+    {"field": "Sales", "type": "quantitative"}
+    ]
+    }
+}
