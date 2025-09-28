@@ -4,11 +4,11 @@
     "width": 800,
     "height": 600,
     "projection": {"type": "azimuthalEqualArea"},
-    "data": {"url": "https://raw.githubusercontent.com/nbetro5/fit3179/main/georef-australia-state%40public.geojson", "format": {"type": "geojson"}},
+    "data": {"url": "https://raw.githubusercontent.com/nbetro5/fit3179/main/australian-states.min.geojson", "format": {"type": "json"}},
 
     "transform": [
     {
-        "lookup": "properties.NAME",
+        "lookup": "properties.STATE_NAME",
         "from": {
         "data": {
         "url": "https://raw.githubusercontent.com/nbetro5/fit3179/main/salesbystate.csv"
@@ -26,7 +26,7 @@
     "scale": {"type": "linear"}
     },
     "tooltip": [
-    {"field": "properties.NAME", "type": "nominal", "title":
+    {"field": "properties.STATE_NAME", "type": "nominal", "title":
     "State"},
     {"field": "Sales", "type": "quantitative"}
     ]
