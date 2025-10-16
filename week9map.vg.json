@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "New Car Sales by State in Australia (May 2025)",
-  "width": 800,
+  "width": 600,
   "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/nbetro5/fit3179/main/australian-states.json",
@@ -46,4 +46,5 @@
     {"field": "Sales", "type": "quantitative"}
     ]
     }
+
   }
